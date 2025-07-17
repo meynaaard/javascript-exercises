@@ -1,12 +1,10 @@
 /*
 1. Create a function expression that accepts parameter `array` and `exclude`
-2. Use .filter() method to filter out the array items that are not equal to the
-    `exclude` parameter
-
+2. Return the array using .filter() method that filter out the items of the
+    array that are NOT included in the `exclusion` array.
 */
-
-const removeFromArray = function(array, exclude) {
-  return array.filter((item) => item !== exclude);
+const removeFromArray = function(array, ...excludes) {
+  return array.filter((item) => !excludes.includes(item));
 };
 
 // Do not edit below this line
