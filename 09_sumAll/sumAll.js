@@ -5,14 +5,22 @@
 3. Create a variable sum, initialize to 0.
 4. For every loop, an addition assignment to `sum` is performed where `sum` is 
     equal to `sum` plus `i`
+5. If the `start` is greater than `end`, the condition checks if `i` is greater
+    than or equal to `end`, decrement the step value.
 5. Return the total `sum`
 */
 
 const sumAll = function(start, end) {
   let sum = 0;
-  
-  for (let i = start; i <= end; i++) {
-    sum += i;
+
+  if (start > end) {
+    for (let i = start; i >= end; i--) {
+      sum += i;
+    }
+  } else {
+    for (let i = start; i <= end; i++) {
+      sum += i;
+    }
   }
 
   return sum;
