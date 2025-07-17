@@ -21,5 +21,7 @@ const reverseString = function(string) {
   return reversedString.join("");
 };
 
+// I forgot .reverse() function exists (－‸ლ)
+
 // Do not edit below this line
 module.exports = reverseString;
