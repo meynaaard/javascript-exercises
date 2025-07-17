@@ -13,18 +13,36 @@
 const sumAll = function(start, end) {
   let sum = 0;
 
-  if (start > end) {
-    for (let i = start; i >= end; i--) {
-      sum += i;
+  if (isNonNegative(start, end) 
+    && isInteger(start, end) 
+    && isNumber(start, end)) {
+    if (start > end) {
+      for (let i = start; i >= end; i--) {
+        sum += i;
+      }
+    } else {
+      for (let i = start; i <= end; i++) {
+        sum += i;
+      }
     }
   } else {
-    for (let i = start; i <= end; i++) {
-      sum += i;
-    }
+    return "ERROR";
   }
 
   return sum;
 };
+
+function isNonNegative(start, end) {
+  return start > 0 && end > 0;
+}
+
+function isInteger(start, end) {
+  return Number.isInteger(start) && Number.isInteger(end);
+}
+
+function isNumber(start, end) {
+  return Number.isFinite(start) && Number.isFinite(end);
+}
 
 // Do not edit below this line
 module.exports = sumAll;
